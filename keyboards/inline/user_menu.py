@@ -26,7 +26,7 @@ def help_markup():
 			],
 			[
 				InlineKeyboardButton(
-					text='📰 News', url='https://t.me/steamcomm_uz'),
+					text='📰 News', url='https://t.me/green_ceo'),
 			],
 			[
 				InlineKeyboardButton(
