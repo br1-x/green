@@ -23,7 +23,7 @@ cabinet = """
 
 <b>🕰 Дней в боте:</b> {data}
 
-<b>⭐ Ваш баланс:</b> {balance} ⭐
+<b>⭐ Balansingiz:</b> {balance} ⭐
 
 <b>👥 Привел пользователей:</b> {ref}
 
@@ -34,7 +34,7 @@ product = """
 <b>🧿 Название товара:</b> {name}
 <b>💈 Количество товара:</b> {amount_product} шт
 <b>💰 Стоимость товара:</b> {price} ⭐ 
-<b>💳 Ваш баланс:</b> {balance} ⭐
+<b>💳 Balansinigiz:</b> {balance} ⭐
 
 <b>Описание товара:</b>
 <i>{description}</i>

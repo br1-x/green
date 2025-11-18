@@ -15,7 +15,7 @@ async def message_three(msg: types.Message):
         # Using a placeholder image URL - replace with your actual image URL
         photo = 'https://media.etfmarknaden.se/2023/10/XZDE-ETF.jpg'  # Replace with your direct image URL
         user = User(msg.from_user.id)
-        text = f'<b>⭐ Ваш баланс:</b> {user.balance} ⭐'
+        text = f'<b>⭐ Balansingiz:</b> {user.balance} ⭐'
         try:
             await msg.answer_photo(photo=photo, caption=text, reply_markup=menu.menu_markup())
         except Exception as e:

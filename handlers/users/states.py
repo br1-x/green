@@ -122,16 +122,16 @@ async def user_promo(msg: types.Message, state: FSMContext):
                 await activate_promo(msg.from_user.id, msg.text)
                 await User(msg.from_user.id).update_balance(float(i[2]))
 
-                await msg.answer(f'🤑 <b>Вам начисленно + {i[2]}₽</b>')
+                await msg.answer(f'🤑 <b>Sizga berildi + {i[2]}₽</b>')
                 await bot.send_message(chat_id=config.config('admin_group'),
                                     text=f'<b>🎁 Активация промокода:</b>\n\n'
                                          f'<b>Пользователь:</b> {msg.from_user.get_mention(as_html=True)} | {msg.from_user.id}\n\n'
                                          f'<b>Промокод:</b> {msg.text} | <b>Сумма:</b> {i[2]} ⭐')
             else:
-                await msg.answer(f'Вы уже активировали этот промокод')
+                await msg.answer(f'Siz bu promo-kodni allaqachon faollashtirgansiz!')
         else:
             await delete_promo(msg.text)
-            await msg.answer(f'😭 <b>Промокод закончился</b>')
+            await msg.answer(f'😭 <b>Promokod limiti tugagab</b>')
     else:
-        await msg.answer(f'😬 <b>Нет такого промокода</b>')
+        await msg.answer(f'😬 <b>Bunday Promokod topilmadi ! </b>')
     await state.finish()

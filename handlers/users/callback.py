@@ -214,7 +214,7 @@ async def topup_profile_handler(call: types.CallbackQuery, state: FSMContext):
         
     text = f"""<b>💳 Пополнение профиля</b>
 
-Ваш баланс: {user.balance} ⭐
+Sizni balansingiz: {user.balance} ⭐
 
 Введите количество звезд, которые вы хотите перевести в баланс профиля:"""
     
@@ -429,7 +429,7 @@ async def handler_call(call: types.CallbackQuery, state: FSMContext):
                 await call.message.delete()
             
             if call.data == 'to_menu':
-                text = f'<b>⭐ Ваш баланс:</b> {user.balance}'
+                text = f'<b>⭐ Balansingiz:</b> {user.balance}'
                 await call.message.edit_caption(caption=text, reply_markup=menu.menu_markup())
             
             if call.data == 'cabinet':
@@ -472,8 +472,9 @@ async def handler_call(call: types.CallbackQuery, state: FSMContext):
                 await call.message.delete()
                 await call.message.answer('<b>Проверка пройдена!\nНажми /start еще раз.</b>')
                 userx = User(str(call.data.split(":")[1]).split("_")[1])
-                await userx.update_balance(float(1))
-                await bot.send_message(str(call.data.split(":")[1]).split("_")[1], f'<b>💰 Вам начислено</b> <code>1</code>₽ <b>за</b> {call.from_user.get_mention(name="реферала", as_html=True)}')
+                # Give 5 stars (equals 1,000 so'm)
+                await userx.update_balance(5)
+                await bot.send_message(str(call.data.split(":")[1]).split("_")[1], f'<b>💰 Вам начислено</b> <code>5</code>⭐ (<code>1,000</code> so\'m) <b>за</b> {call.from_user.get_mention(name="реферала", as_html=True)}')
                 await bot.send_message(chat_id=config.config("admin_group"), text=f'''💎 <b>Приглашён новый реферал 
 
 ◽️Рефер: {userx.username}

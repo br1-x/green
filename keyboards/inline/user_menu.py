@@ -30,7 +30,7 @@ def help_markup():
 			],
 			[
 				InlineKeyboardButton(
-					text='📕 Правила', callback_data='rules')
+                    text='📕 Правила', callback_data='rules_market')
 			],
 
 			[
